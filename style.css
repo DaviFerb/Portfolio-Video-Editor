@@ -170,8 +170,9 @@ a { text-decoration: none; color: inherit; }
 .section {
   padding-block: clamp(var(--sp-16), 10vw, 120px);
   padding-inline: clamp(var(--sp-5), 5vw, var(--sp-12));
+  overflow: visible;
 }
-.section-alt { background: var(--bg-alt); }
+.section-alt { background: var(--bg-alt); overflow: visible; }
 
 .container        { max-width: 1100px; margin-inline: auto; }
 .container-narrow { max-width:  720px; margin-inline: auto; }
@@ -192,10 +193,12 @@ a { text-decoration: none; color: inherit; }
 .section-title {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: clamp(24px, 3.2vw, 40px);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: clamp(22px, 3vw, 38px);
+  line-height: 1.22;
+  letter-spacing: -0.015em;
   color: var(--text);
+  padding-block-end: 0.08em;
+  overflow: visible;
 }
 
 /* ════════════════════════════════════════════
@@ -272,16 +275,20 @@ a { text-decoration: none; color: inherit; }
 .hero-title {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  /* Slightly smaller: let avatar breathe instead of dominating */
   font-size: clamp(26px, 3.4vw, 46px);
-  line-height: 1.08;
-  letter-spacing: -0.025em;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
   color: var(--text);
   margin-bottom: var(--sp-4);
+  /* Extra padding so descenders never clip */
+  padding-block-end: 0.1em;
+  overflow: visible;
 }
 .hero-title em {
   font-style: normal;
   color: var(--accent);
+  display: inline;
+  overflow: visible;
 }
 .hero-desc {
   font-size: clamp(13px, 1.4vw, 15px);
@@ -460,16 +467,20 @@ a { text-decoration: none; color: inherit; }
 /* ════════════════════════════════════════════
    CONTACT
 ════════════════════════════════════════════ */
-#contato { text-align: center; }
+#contato { text-align: center; overflow: visible; }
 
 .contact-title {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: clamp(22px, 3.2vw, 40px);
-  line-height: 1.22;
-  letter-spacing: -0.02em;
+  font-size: clamp(20px, 2.8vw, 36px);
+  /* Generous line-height: Syne ascenders need room */
+  line-height: 1.32;
+  letter-spacing: -0.01em;
   color: var(--text);
   margin-bottom: var(--sp-12);
+  /* Vertical padding so no letter clips at any font-size */
+  padding-block: 0.1em;
+  overflow: visible;
 }
 .contact-label {
   display: block;
@@ -602,4 +613,27 @@ a { text-decoration: none; color: inherit; }
   }
   .contact-icons { gap: var(--sp-3); }
   .contact-icon  { width: 42px; height: 42px; }
+}
+
+/* Safety: accent spans inside headings must never clip */
+.hero-title .accent,
+.hero-title em,
+.contact-title .accent,
+.contact-title .accent2,
+.section-title .accent {
+  display: inline;
+  overflow: visible;
+  /* Padding compensates for Syne descender metrics */
+  padding-inline: 0.02em;
+}
+
+/* Global heading safety — no Syne heading ever clips */
+h1, h2, h3,
+.hero-title,
+.section-title,
+.contact-title {
+  overflow: visible;
+  /* word-wrap prevents horizontal overflow on small screens */
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
