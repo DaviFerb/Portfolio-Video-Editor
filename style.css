@@ -109,6 +109,31 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
 }
 .nav-sep  { color: rgba(255,255,255,0.18); margin-inline: var(--sp-2); }
 .nav-role { color: var(--muted); font-weight: 400; font-size: 14px; }
+/* ── Nav center links ── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-8);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: auto;
+}
+.nav-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  font-family: inherit;
+  transition: color var(--t-fast) var(--ease);
+}
+.nav-link:hover { color: var(--text); }
+
 
 /* Lang switcher */
 .lang-wrap { position: relative; }
