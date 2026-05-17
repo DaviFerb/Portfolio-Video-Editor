@@ -211,7 +211,7 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(var(--sp-10), 6vw, 72px);
+  gap: clamp(var(--sp-12), 7vw, 96px);
   max-width: 960px;
   width: 100%;
 }
@@ -263,6 +263,7 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
   min-width: 0;
   /* Capped: tight column = premium feel (Linear, Framer pattern) */
   max-width: 440px;
+  margin-left: 12px;
 }
 .hero-title {
   font-family: 'DM Sans', sans-serif;
