@@ -231,7 +231,7 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
   min-height: 100svh;
   display: grid;
   place-items: center;
-  padding-block: calc(var(--nav-h) + var(--sp-2)) var(--sp-16);
+  padding-block: var(--nav-h) var(--sp-16);
   padding-inline: clamp(var(--sp-5), 5vw, var(--sp-12));
 }
 .hero-container {
