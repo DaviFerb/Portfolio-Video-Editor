@@ -20,7 +20,7 @@
   --r-lg:  20px;
 
   /* Nav */
-  --nav-h: 64px;
+  --nav-h: 67px;
 
   /* Easing */
   --ease:   cubic-bezier(0.4, 0, 0.2, 1);
@@ -96,6 +96,7 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
   -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--border);
   z-index: 100;
+  position: relative;
 }
 .nav-brand {
   font-family: 'DM Sans', sans-serif;
@@ -567,6 +568,8 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
    RESPONSIVE — TABLET ≤ 768px
 ════════════════════════════════════════════ */
 @media (max-width: 768px) {
+  .nav-links { display: none; }
+
   .hero-container {
     flex-direction: column;
     text-align: center;

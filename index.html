@@ -6,7 +6,6 @@
 <title>Davik — Editor de Vídeo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,600;0,9..40,700;0,9..40,800&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="after-effects 2.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,6 +13,11 @@
 <!-- NAV -->
 <header class="nav">
   <a href="/" class="nav-brand">Davik <span class="nav-sep">|</span> <span class="nav-role" id="navRole">Editor de Vídeo</span></a>
+  <nav class="nav-links">
+    <button class="nav-link" onclick="goTo('portfolio')" id="navShorts">Shorts</button>
+    <button class="nav-link" onclick="goTo('sobre')" id="navAbout">Sobre</button>
+    <button class="nav-link" onclick="goTo('contato')" id="navContact">Contatos</button>
+  </nav>
   <div class="lang-wrap" id="langWrap">
     <button class="lang-btn" id="langBtn">PT-BR</button>
     <div class="lang-drop" id="langDrop">
