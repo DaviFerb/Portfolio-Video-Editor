@@ -80,7 +80,7 @@ document.addEventListener('click', () => langWrap.classList.remove('open'));
 /* ════════════════════════════════════════════
    SMOOTH SCROLL
 ════════════════════════════════════════════ */
-function scrollTo(id) {
+function goTo(id) {
   if (id === 'top') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
   const el = document.getElementById(id);
   if (!el) return;
