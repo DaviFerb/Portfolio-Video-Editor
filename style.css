@@ -200,9 +200,11 @@ a { text-decoration: none; color: inherit; }
 
 /* ════════════════════════════════════════════
    HERO
+   Visual balance: left column = 40%, right = 60%
+   Avatar sized to match visual weight of text block
 ════════════════════════════════════════════ */
 .hero {
-  min-height: 100svh;   /* svh for mobile browsers */
+  min-height: 100svh;
   display: grid;
   place-items: center;
   padding-block: calc(var(--nav-h) + var(--sp-10)) var(--sp-16);
@@ -212,39 +214,43 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(var(--sp-10), 7vw, var(--sp-20));
-  max-width: 1020px;
+  /* Gap calibrated so combined width feels optically centered */
+  gap: clamp(var(--sp-8), 5vw, 56px);
+  /* Wide enough to use space, narrow enough to feel tight */
+  max-width: 900px;
   width: 100%;
 }
 
-/* Left column — avatar */
+/* Left column: fixed visual weight ~38% */
 .hero-avatar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--sp-4);
-  flex: 0 0 auto;
+  gap: var(--sp-3);
+  /* Fixed basis so it doesn't shrink against text */
+  flex: 0 0 clamp(180px, 22vw, 240px);
 }
 .avatar-wrap {
-  width:  clamp(130px, 16vw, 200px);
-  height: clamp(130px, 16vw, 200px);
+  /* Larger avatar = more visual gravity to balance the text block */
+  width:  100%;
   aspect-ratio: 1;
   border-radius: 50%;
   overflow: hidden;
-  border: 1.5px solid rgba(59,158,255,0.3);
-  outline: 6px solid rgba(59,158,255,0.06);
-  outline-offset: 0;
+  border: 1.5px solid rgba(59,158,255,0.28);
+  box-shadow:
+    0 0 0 6px rgba(59,158,255,0.05),
+    0 24px 64px rgba(0,0,0,0.4);
 }
 .avatar-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
 }
 .hero-name {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: clamp(17px, 2vw, 21px);
+  font-size: clamp(16px, 1.8vw, 20px);
   color: var(--text);
   letter-spacing: -0.01em;
 }
@@ -253,32 +259,37 @@ a { text-decoration: none; color: inherit; }
   color: var(--muted);
   font-weight: 400;
   letter-spacing: 0.02em;
+  text-align: center;
 }
 
-/* Right column — content */
+/* Right column: remaining space ~62%, capped so text stays readable */
 .hero-content {
   flex: 1;
   min-width: 0;
+  /* Cap text width — wide text feels cheap, tight text feels premium */
+  max-width: 420px;
 }
 .hero-title {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: clamp(28px, 3.8vw, 50px);
+  /* Slightly smaller: let avatar breathe instead of dominating */
+  font-size: clamp(26px, 3.4vw, 46px);
   line-height: 1.08;
   letter-spacing: -0.025em;
   color: var(--text);
-  margin-bottom: var(--sp-5);
+  margin-bottom: var(--sp-4);
 }
 .hero-title em {
   font-style: normal;
   color: var(--accent);
 }
 .hero-desc {
-  font-size: clamp(14px, 1.5vw, 15px);
+  font-size: clamp(13px, 1.4vw, 15px);
   color: var(--muted);
   line-height: 1.78;
-  max-width: 460px;
-  margin-bottom: var(--sp-8);
+  /* Match content column width exactly — no orphan lines */
+  max-width: 100%;
+  margin-bottom: var(--sp-6);
 }
 .hero-desc strong { color: var(--text); font-weight: 500; }
 .hero-actions {
@@ -558,10 +569,20 @@ a { text-decoration: none; color: inherit; }
   .hero-container {
     flex-direction: column;
     text-align: center;
-    gap: var(--sp-8);
+    gap: var(--sp-6);
+  }
+  /* Avatar smaller on mobile — saves vertical space */
+  .hero-avatar {
+    flex: 0 0 auto;
+  }
+  .avatar-wrap {
+    width: clamp(120px, 40vw, 160px);
+  }
+  .hero-content {
+    max-width: 100%;
   }
   .hero-desc {
-    max-width: 100%;
+    max-width: 480px;
     margin-inline: auto;
   }
   .hero-actions { justify-content: center; }
