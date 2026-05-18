@@ -230,11 +230,12 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
 .hero {
   min-height: 100svh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   padding-block-start: calc(var(--nav-h) + 18vh);
   padding-block-end: 18vh;
   padding-inline: clamp(var(--sp-5), 5vw, var(--sp-12));
+  overflow: visible;
 }
 .hero-container {
   display: flex;
@@ -243,6 +244,7 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
   gap: clamp(var(--sp-10), 6vw, 72px);
   max-width: 960px;
   width: 100%;
+  overflow: visible;
 }
 
 /* Avatar column */
@@ -596,7 +598,7 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
 .scroll-indicator {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   margin-top: var(--sp-8);
   opacity: 0.4;
