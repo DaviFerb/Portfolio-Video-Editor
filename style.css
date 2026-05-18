@@ -233,7 +233,7 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-block-start: calc(var(--nav-h) + 40px);
+  padding-block-start: calc(var(--nav-h) + 10vh);
   padding-block-end: 60px;
   padding-inline: clamp(var(--sp-5), 5vw, var(--sp-12));
   overflow: visible;
