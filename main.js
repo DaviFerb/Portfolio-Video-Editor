@@ -18,6 +18,7 @@ const T = {
     navContact: 'Contatos',
     backTxt: 'Voltar ao topo',
     footerText: '© 2026 — DAVIK | EDITOR DE VÍDEO',
+    scrollLabel: 'SCROLL',
     comingSoon: 'Em breve',
   },
   en: {
@@ -36,6 +37,7 @@ const T = {
     navContact: 'Contacts',
     backTxt: 'Back to top',
     footerText: '© 2026 — DAVIK | VIDEO EDITOR',
+    scrollLabel: 'SCROLL',
     comingSoon: 'Coming soon',
   }
 };
@@ -63,6 +65,7 @@ function applyLang(l) {
   setText('navContact', t.navContact);
   setText('backTxt',   t.backTxt);
   setText('footerText',t.footerText);
+  setText('scrollLabel', t.scrollLabel);
   document.querySelectorAll('[data-i18n="comingSoon"]').forEach(el => el.textContent = t.comingSoon);
 
   document.getElementById('langBtn').textContent = l === 'pt' ? 'PT-BR' : 'EN';
