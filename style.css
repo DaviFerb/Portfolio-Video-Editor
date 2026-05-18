@@ -228,13 +228,15 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
    Visual weight balanced via avatar size + tight content width
 ════════════════════════════════════════════ */
 .hero {
+  position: relative;
   min-height: 100svh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding-block-start: calc(var(--nav-h) + 18vh);
-  padding-block-end: 18vh;
+  padding-block-start: calc(var(--nav-h) + 1vh);
+  padding-block-end: 19vh;
   padding-inline: clamp(var(--sp-5), 5vw, var(--sp-12));
+  overflow: visible;
 }
 .hero-container {
   display: flex;
@@ -243,6 +245,7 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
   gap: clamp(var(--sp-10), 6vw, 72px);
   max-width: 960px;
   width: 100%;
+  overflow: visible;
 }
 
 /* Avatar column */
@@ -334,21 +337,20 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
 .btn-pill {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  /* Up from 9px/18px: more breathable */
-  padding: 11px 20px;
-  font-size: var(--text-sm);
+  gap: 8px;
+  padding: 13px 24px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--text);
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.18);
   border-radius: 40px;
   white-space: nowrap;
   transition: color var(--t-base) var(--ease),
               border-color var(--t-base) var(--ease),
               background var(--t-base) var(--ease);
 }
-.btn-pill svg { width: 14px; height: 14px; flex-shrink: 0; }
+.btn-pill svg { width: 15px; height: 15px; flex-shrink: 0; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .btn-pill:hover {
   border-color: var(--accent);
   color: var(--accent);
@@ -592,6 +594,9 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
 }
 .reveal.on { opacity: 1; transform: translateY(0); }
 
+
+
+
 /* ════════════════════════════════════════════
    RESPONSIVE — TABLET ≤ 768px
 ════════════════════════════════════════════ */
@@ -607,7 +612,7 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
   .avatar-wrap { width: clamp(130px, 42vw, 180px); }
   .hero-content { max-width: 100%; transform: none; }
   .hero-desc  { max-width: 500px; margin-inline: auto; }
-  .hero-actions { justify-content: center; }
+  .scroll-indicator { align-items: center; }
   .videos-grid { grid-template-columns: repeat(2, 1fr); }
   .skills-grid { grid-template-columns: 1fr; }
 }
