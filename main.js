@@ -13,7 +13,7 @@ const T = {
     atext: 'Olá! Meu nome é <strong>Davik</strong>. Acredito que edição é sobre <strong>ritmo, sensação e impacto visual</strong>. Combino narrativa, pacing e identidade visual para criar conteúdos modernos e imersivos. Cada corte e detalhe possui um propósito: <strong>transformar atenção em experiência</strong>.',
     ctaTitle: 'Envie-me uma mensagem<br>e vamos <span class="accent">trabalhar</span> <span class="accent2">juntos!</span>',
     ctaLabel: 'Contatos',
-    sklabel: 'TOOLS & SKILLS',
+    sklabel: 'FERRAMENTAS & HABILIDADES',
     navShorts: 'Shorts',
     navAbout: 'Sobre',
     navContact: 'Contatos',
