@@ -13,6 +13,7 @@ const T = {
     atext: 'Olá! Meu nome é <strong>Davik</strong>. Acredito que edição é sobre <strong>ritmo, sensação e impacto visual</strong>. Combino narrativa, pacing e identidade visual para criar conteúdos modernos e imersivos. Cada corte e detalhe possui um propósito: <strong>transformar atenção em experiência</strong>.',
     ctaTitle: 'Envie-me uma mensagem<br>e vamos <span class="accent">trabalhar</span> <span class="accent2">juntos!</span>',
     ctaLabel: 'Contatos',
+    sklabel: 'TOOLS & SKILLS',
     navShorts: 'Shorts',
     navAbout: 'Sobre',
     navContact: 'Contatos',
@@ -32,6 +33,8 @@ const T = {
     atext: 'Hello! My name is <strong>Davik</strong>. I believe editing is about <strong>rhythm, sensation and visual impact</strong>. I combine narrative, pacing and visual identity to create modern, immersive content. Every cut has a purpose: <strong>turning attention into experience</strong>.',
     ctaTitle: 'Send me a message<br>and let\'s <span class="accent">work</span> <span class="accent2">together!</span>',
     ctaLabel: 'Contacts',
+    sklabel: 'TOOLS & SKILLS',
+    sklabel: 'TOOLS & SKILLS',
     navShorts: 'Shorts',
     navAbout: 'About',
     navContact: 'Contacts',
@@ -63,6 +66,7 @@ function applyLang(l) {
   setText('navShorts', t.navShorts);
   setText('navAbout',  t.navAbout);
   setText('navContact', t.navContact);
+  setText('sklabel',   t.sklabel);
   setText('backTxt',   t.backTxt);
   setText('footerText',t.footerText);
   setText('scrollLabel', t.scrollLabel);
