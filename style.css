@@ -228,15 +228,13 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
    Visual weight balanced via avatar size + tight content width
 ════════════════════════════════════════════ */
 .hero {
-  position: relative;
   min-height: 100svh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding-block-start: calc(var(--nav-h) + 1vh);
-  padding-block-end: 19vh;
+  padding-block-start: calc(var(--nav-h) + 18vh);
+  padding-block-end: 18vh;
   padding-inline: clamp(var(--sp-5), 5vw, var(--sp-12));
-  overflow: visible;
 }
 .hero-container {
   display: flex;
@@ -245,7 +243,6 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
   gap: clamp(var(--sp-10), 6vw, 72px);
   max-width: 960px;
   width: 100%;
-  overflow: visible;
 }
 
 /* Avatar column */
@@ -337,20 +334,21 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
 .btn-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 13px 24px;
-  font-size: 14px;
+  gap: 7px;
+  /* Up from 9px/18px: more breathable */
+  padding: 11px 20px;
+  font-size: var(--text-sm);
   font-weight: 500;
   color: var(--text);
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.14);
   border-radius: 40px;
   white-space: nowrap;
   transition: color var(--t-base) var(--ease),
               border-color var(--t-base) var(--ease),
               background var(--t-base) var(--ease);
 }
-.btn-pill svg { width: 15px; height: 15px; flex-shrink: 0; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.btn-pill svg { width: 14px; height: 14px; flex-shrink: 0; }
 .btn-pill:hover {
   border-color: var(--accent);
   color: var(--accent);
@@ -594,42 +592,6 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
 }
 .reveal.on { opacity: 1; transform: translateY(0); }
 
-
-/* ── Scroll indicator ── */
-.scroll-indicator {
-  position: absolute;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  opacity: 0.4;
-  transition: opacity var(--t-base) var(--ease);
-}
-.scroll-indicator:hover { opacity: 0.7; }
-.scroll-line {
-  width: 1px;
-  height: 48px;
-  background: linear-gradient(to bottom, transparent, var(--accent));
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
-  50%       { opacity: 1;   transform: scaleY(1); }
-}
-.scroll-label {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-family: 'Inter', sans-serif;
-}
-
-/* Hero needs position:relative for the scroll indicator */
-
 /* ════════════════════════════════════════════
    RESPONSIVE — TABLET ≤ 768px
 ════════════════════════════════════════════ */
@@ -645,7 +607,7 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
   .avatar-wrap { width: clamp(130px, 42vw, 180px); }
   .hero-content { max-width: 100%; transform: none; }
   .hero-desc  { max-width: 500px; margin-inline: auto; }
-  .scroll-indicator { align-items: center; }
+  .hero-actions { justify-content: center; }
   .videos-grid { grid-template-columns: repeat(2, 1fr); }
   .skills-grid { grid-template-columns: 1fr; }
 }
