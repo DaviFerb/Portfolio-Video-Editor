@@ -612,7 +612,7 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
 .scroll-line {
   width: 1px;
   height: 48px;
-  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.6));
+  background: linear-gradient(to bottom, transparent, var(--accent));
   animation: scrollPulse 2s ease-in-out infinite;
 }
 @keyframes scrollPulse {
@@ -624,7 +624,7 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: var(--accent);
   font-family: 'Inter', sans-serif;
 }
 
