@@ -228,12 +228,13 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
    Visual weight balanced via avatar size + tight content width
 ════════════════════════════════════════════ */
 .hero {
+  position: relative;
   min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-block-start: calc(var(--nav-h) + 18vh);
-  padding-block-end: 18vh;
+  padding-block-start: calc(var(--nav-h) + 40px);
+  padding-block-end: 60px;
   padding-inline: clamp(var(--sp-5), 5vw, var(--sp-12));
   overflow: visible;
 }
@@ -596,11 +597,14 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
 
 /* ── Scroll indicator ── */
 .scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  margin-top: var(--sp-8);
   opacity: 0.4;
   transition: opacity var(--t-base) var(--ease);
 }
@@ -624,8 +628,7 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
   font-family: 'Inter', sans-serif;
 }
 
-/* Hero must be position relative for scroll indicator */
-.hero { position: relative; }
+/* Hero needs position:relative for the scroll indicator */
 
 /* ════════════════════════════════════════════
    RESPONSIVE — TABLET ≤ 768px
