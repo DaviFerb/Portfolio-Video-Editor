@@ -598,7 +598,7 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
 /* ── Scroll indicator ── */
 .scroll-indicator {
   position: absolute;
-  bottom: 32px;
+  bottom: 80px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
