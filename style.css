@@ -232,8 +232,8 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-block-start: calc(var(--nav-h) + 40px);
-  padding-block-end: 60px;
+  padding-block-start: calc(var(--nav-h) + 18vh);
+  padding-block-end: 18vh;
   padding-inline: clamp(var(--sp-5), 5vw, var(--sp-12));
 }
 .hero-container {
