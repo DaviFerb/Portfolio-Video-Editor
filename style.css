@@ -332,6 +332,9 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
   flex-wrap: wrap;
 }
 
+/* Hidden on desktop, activates on mobile to push icons to new row */
+.hero-social-break { display: none; }
+
 /* ════════════════════════════════════════════
    BUTTONS
 ════════════════════════════════════════════ */
@@ -625,6 +628,21 @@ h1, h2, h3 { overflow: visible; overflow-wrap: break-word; }
   .hero-content { max-width: 100%; transform: none; }
   .hero-desc  { max-width: 500px; margin-inline: auto; }
   .scroll-indicator { align-items: center; }
+
+  /* Social icons drop to second row, centered */
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+  }
+  .hero-social-break {
+    display: block;
+    flex-basis: 100%;
+    height: var(--sp-3);
+  }
+  .hero-actions .btn-icon {
+    flex-shrink: 0;
+  }
   .videos-grid { grid-template-columns: repeat(2, 1fr); }
   .skills-grid { grid-template-columns: 1fr; }
 }
